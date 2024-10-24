@@ -162,7 +162,7 @@ ifeq ($(REMOTE),localhost)
 	@sync -d $(BUILD_DIR) -d $(EMU_DIR)
 else
 	ssh -tt $(REMOTE) 'export NOOP_HOME=$(NOOP_HOME); \
-					   $(MAKE) -C $(NOOP_HOME)/difftest build_emu \
+					   $(MAKE) -C $(NOOP_HOME)/difftest_trinity build_emu \
 					   -j `nproc` \
 					   OPT_FAST="'"$(OPT_FAST)"'" \
 					   PGO_CFLAGS="'"$(PGO_CFLAGS)"'" \
