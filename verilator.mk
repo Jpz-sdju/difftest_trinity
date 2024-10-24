@@ -90,7 +90,8 @@ VEXTRA_FLAGS += --coverage-line --coverage-toggle
 endif
 
 # Verilator optimization
-EMU_OPTIMIZE ?= -O3
+# EMU_OPTIMIZE ?= -O3
+EMU_OPTIMIZE ?= -O0
 
 # C optimization
 OPT_FAST ?= -O3
@@ -111,12 +112,16 @@ VERILATOR_FLAGS =                   \
   --output-split-cfuncs 30000       \
   -I$(RTL_DIR)                      \
   -I$(GEN_VSRC_DIR)                 \
+  -I../vsrc/						\
+  -I../vsrc/sim_ram/						\
   -CFLAGS "$(EMU_CXXFLAGS)"         \
   -LDFLAGS "$(EMU_LDFLAGS)"         \
   -CFLAGS "\$$(PGO_CFLAGS)"         \
   -LDFLAGS "\$$(PGO_LDFLAGS)"       \
   -o $(abspath $(EMU))              \
-  $(VEXTRA_FLAGS)
+  $(VEXTRA_FLAGS)					\
+  --debug \
+  -CFLAGS -ggdb -LDFLAGS -ggdb
 
 EMU_DIR = $(BUILD_DIR)/emu-compile
 EMU_MK  = $(EMU_DIR)/V$(EMU_TOP).mk
