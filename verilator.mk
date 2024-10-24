@@ -123,6 +123,9 @@ VERILATOR_FLAGS =                   \
   --debug \
   -CFLAGS -ggdb -LDFLAGS -ggdb
 
+
+
+
 EMU_DIR = $(BUILD_DIR)/emu-compile
 EMU_MK  = $(EMU_DIR)/V$(EMU_TOP).mk
 EMU_DEPS  := $(SIM_VSRC) $(EMU_CXXFILES)
