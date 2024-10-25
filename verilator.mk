@@ -114,14 +114,15 @@ VERILATOR_FLAGS =                   \
   -I$(GEN_VSRC_DIR)                 \
   -I../vsrc/						\
   -I../vsrc/sim_ram/						\
+  -I../vsrc/frontend/						\
   -CFLAGS "$(EMU_CXXFLAGS)"         \
   -LDFLAGS "$(EMU_LDFLAGS)"         \
   -CFLAGS "\$$(PGO_CFLAGS)"         \
   -LDFLAGS "\$$(PGO_LDFLAGS)"       \
   -o $(abspath $(EMU))              \
-  $(VEXTRA_FLAGS)					\
-  --debug \
-  -CFLAGS -ggdb -LDFLAGS -ggdb
+  $(VEXTRA_FLAGS)					
+#   --debug \
+#   -CFLAGS -ggdb -LDFLAGS -ggdb
 
 
 
