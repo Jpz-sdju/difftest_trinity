@@ -115,6 +115,9 @@ VERILATOR_FLAGS =                   \
   -I../vsrc/						\
   -I../vsrc/sim_ram/						\
   -I../vsrc/frontend/						\
+  -I../vsrc/backend/						\
+  -I../vsrc/include/						\
+  -I../vsrc/fu/						\
   -CFLAGS "$(EMU_CXXFLAGS)"         \
   -LDFLAGS "$(EMU_LDFLAGS)"         \
   -CFLAGS "\$$(PGO_CFLAGS)"         \
