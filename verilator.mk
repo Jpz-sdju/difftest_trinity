@@ -118,6 +118,7 @@ VERILATOR_FLAGS =                   \
   -I../vsrc/backend/						\
   -I../vsrc/include/						\
   -I../vsrc/fu/								\
+  -I../vsrc/cache/							\
   --trace-max-array 99						\
   -CFLAGS "$(EMU_CXXFLAGS)"         \
   -LDFLAGS "$(EMU_LDFLAGS)"         \
