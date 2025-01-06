@@ -119,7 +119,7 @@ VERILATOR_FLAGS =                   \
   -I../vsrc/include/						\
   -I../vsrc/fu/								\
   -I../vsrc/cache/							\
-  --trace-max-array 99						\
+  --trace-max-array 560						\
   -CFLAGS "$(EMU_CXXFLAGS)"         \
   -LDFLAGS "$(EMU_LDFLAGS)"         \
   -CFLAGS "\$$(PGO_CFLAGS)"         \
