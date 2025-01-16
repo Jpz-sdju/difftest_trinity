@@ -70,7 +70,7 @@ VEXTRA_FLAGS += --trace-underscore
 endif
 
 # Verilator multi-thread support
-EMU_THREADS  ?= 0
+EMU_THREADS  ?= 4
 ifneq ($(EMU_THREADS),0)
 VEXTRA_FLAGS += --threads $(EMU_THREADS) --threads-dpi all
 EMU_CXXFLAGS += -DEMU_THREAD=$(EMU_THREADS)
@@ -114,10 +114,15 @@ VERILATOR_FLAGS =                   \
   -I$(GEN_VSRC_DIR)                 \
   -I../vsrc/						\
   -I../vsrc/sim_ram/						\
+  -I../vsrc/pipereg/						\
   -I../vsrc/frontend/						\
   -I../vsrc/backend/						\
+  -I../vsrc/backend/fu/						\
+  -I../vsrc/backend/decode					\
+  -I../vsrc/backend/rename					\
+  -I../vsrc/backend/dispatch				\
+  -I../vsrc/backend/issue					\
   -I../vsrc/include/						\
-  -I../vsrc/fu/								\
   -I../vsrc/cache/							\
   --trace-max-array 560						\
   -CFLAGS "$(EMU_CXXFLAGS)"         \
@@ -163,7 +168,7 @@ EMU_COMPILE_FILTER =
 build_emu:
 ifeq ($(REMOTE),localhost)
 	@sync -d $(BUILD_DIR) -d $(EMU_DIR)
-	$(TIME_CMD) $(MAKE) -s VM_PARALLEL_BUILDS=1 OPT_SLOW="-O0" \
+	$(TIME_CMD) $(MAKE) -s VM_PARALLEL_BUILDS=8 OPT_SLOW="-O0" \
 						OPT_FAST=$(OPT_FAST) \
 						PGO_CFLAGS=$(PGO_CFLAGS) \
 						PGO_LDFLAGS=$(PGO_LDFLAGS) \
