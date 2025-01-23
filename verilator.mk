@@ -113,6 +113,7 @@ VERILATOR_FLAGS =                   \
   -I$(RTL_DIR)                      \
   -I$(GEN_VSRC_DIR)                 \
   -I../vsrc/						\
+  -I../vsrc/common					\
   -I../vsrc/sim_ram/						\
   -I../vsrc/pipereg/						\
   -I../vsrc/frontend/						\
