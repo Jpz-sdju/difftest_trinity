@@ -118,11 +118,12 @@ VERILATOR_FLAGS =                   \
   -I../vsrc/pipereg/						\
   -I../vsrc/frontend/						\
   -I../vsrc/backend/						\
-  -I../vsrc/backend/fu/						\
-  -I../vsrc/backend/decode					\
-  -I../vsrc/backend/rename					\
-  -I../vsrc/backend/dispatch				\
-  -I../vsrc/backend/issue					\
+  -I../vsrc/backend/idu/						\
+  -I../vsrc/backend/iru					\
+  -I../vsrc/backend/isu					\
+  -I../vsrc/backend/exu				\
+  -I../vsrc/backend/exu/fu				\
+  -I../vsrc/backend/exu/memblock				\
   -I../vsrc/include/						\
   -I../vsrc/cache/							\
   --trace-max-array 560						\
