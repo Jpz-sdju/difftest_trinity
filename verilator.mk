@@ -121,9 +121,10 @@ VERILATOR_FLAGS =                   \
   -I../vsrc/backend/idu/						\
   -I../vsrc/backend/iru					\
   -I../vsrc/backend/isu					\
+  -I../vsrc/backend/isu/isq					\
+  -I../vsrc/backend/isu/rob					\
   -I../vsrc/backend/exu				\
   -I../vsrc/backend/exu/fu				\
-  -I../vsrc/backend/exu/memblock				\
   -I../vsrc/include/						\
   -I../vsrc/cache/							\
   --trace-max-array 560						\
